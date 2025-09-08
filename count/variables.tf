@@ -2,6 +2,14 @@ variable "instances" {
     default = ["mysql", "backend", "frontend"]
 }
 
+variable "zone_id" {
+    default = "Z0794266P0ZEQFIEQG3I"
+}
+
+variable "domain_name" {
+    default = "learndevopswithaws.cloud"
+}
+
 # variable "ami_id" {
 #   type        = string
 #   default     = "ami-09c813fb71547fc4f"
