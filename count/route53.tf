@@ -4,9 +4,10 @@ resource "aws_route53_record" "this" {
     type = "A"
     ttl = 1
     records = [aws_instance.this[count.index].private_ip]
+    allow_overwrite = true
 }
 
-resource "aws_route53_record" "this" {
+resource "aws_route53_record" "frontend" {
     zone_id = var.zone_id
     name = "${var.instances[2]}.${var.domain_name}" #interpolation-concatination of text and variables
     type = "A"
