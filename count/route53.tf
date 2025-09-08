@@ -9,7 +9,7 @@ resource "aws_route53_record" "this" {
 
 resource "aws_route53_record" "frontend" {
     zone_id = var.zone_id
-    name = "${var.instances[2]}.${var.domain_name}" #interpolation-concatination of text and variables
+    name = "${var.domain_name}" 
     type = "A"
     ttl = 1
     records = [aws_instance.this[2].public_ip]
